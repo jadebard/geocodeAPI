@@ -50,6 +50,8 @@
                     lng: (long != null) ? long : DEFAULT_LNG 
                 }
             }
+
+            //changed this variable to newMap instead of map in order to make line 67 easier to read.
             var newMap = new google.maps.Map(document.getElementById('map'), options);
             var marker = new google.maps.Marker({
                 //the Marker class has two attributes in use here. position and map;
@@ -61,7 +63,7 @@
                 },
 
                 //this is a map object that is initalized to null. 
-                //this map object tells the Marker class what map it is going to use for placing the marker. 
+                //this map object tells the Marker class what map it is going to use for placing the marker.
                 map: newMap
             });
         }
