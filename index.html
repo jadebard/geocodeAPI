@@ -9,6 +9,8 @@
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+    <!-- look at the part at the end of the url: callback=initMap. This is what is invoking the initMap function onload. It does not pass params to the initMap function-->
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAWix_OtXNPZG2BxOir9VlGq_jEx5C_FwA&callback=initMap"
         async defer></script>
     <title>Geocode Application</title>
@@ -52,13 +54,13 @@
             var marker = new google.maps.Marker({
                 //the Marker class has two attributes in use here. position and map;
 
-                //this is an object of lat and long coords
+                //this is an object of lat and long coords: this tells where on the given map the marker needs to be placed
                 position: { 
                     lat: (lat != null) ? lat : DEFAULT_LAT,
                     lng: (long != null) ? long : DEFAULT_LNG
                 },
 
-                //this is a map object that start null. 
+                //this is a map object that is initalized to null. 
                 //this map object tells the Marker class what map it is going to use for placing the marker. 
                 map: newMap
             });
